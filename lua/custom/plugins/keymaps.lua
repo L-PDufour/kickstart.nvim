@@ -9,4 +9,12 @@ vim.keymap.set("n", "3", function() require('harpoon.ui').nav_file(3) end),
 vim.keymap.set("n", "4", function() require('harpoon.ui').nav_file(4) end),
 vim.keymap.set('n', '<C-f>', "<cmd>Neotree toggle<cr>"),
 
+
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
+  callback = function()
+    if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+      vim.api.nvim_command('silent update')
+    end
+  end,
+})
 }
