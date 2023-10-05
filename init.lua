@@ -86,11 +86,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-<<<<<<< HEAD
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
-=======
       { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -114,11 +110,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-<<<<<<< HEAD
-  { 'folke/which-key.nvim',  opts = {} },
-=======
   { 'folke/which-key.nvim', opts = {} },
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -132,12 +124,6 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-<<<<<<< HEAD
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-=======
         vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
         -- don't override the built-in and fugitive keymaps
@@ -152,14 +138,11 @@ require('lazy').setup({
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
         end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
       end,
     },
   },
 
   {
-<<<<<<< HEAD
-=======
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -169,15 +152,13 @@ require('lazy').setup({
   },
 
   {
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = true,
-        theme = 'catppuccin',
+        icons_enabled = false,
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -190,14 +171,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     main = "ibl",
-<<<<<<< HEAD
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-=======
     opts = {},
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
   },
 
   -- "gc" to comment visual regions/lines
@@ -237,7 +211,7 @@ require('lazy').setup({
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
-  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -245,11 +219,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-<<<<<<< HEAD
   { import = 'custom.plugins' },
-=======
-  -- { import = 'custom.plugins' },
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
 }, {})
 
 -- [[ Setting options ]]
@@ -351,30 +321,6 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
-<<<<<<< HEAD
-require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'markdown' },
-  sync_install = false,
-
-
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = true,
-
-  highlight = { enable = true },
-  indent = { enable = true },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<c-space>',
-      node_incremental = '<c-space>',
-      scope_incremental = '<c-s>',
-      node_decremental = '<M-space>',
-    },
-  },
-  textobjects = {
-    select = {
-=======
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
@@ -387,7 +333,6 @@ vim.defer_fn(function()
     highlight = { enable = true },
     indent = { enable = true },
     incremental_selection = {
->>>>>>> f15af9b8be96f7231c184e0e8636f5732ebda9e9
       enable = true,
       keymaps = {
         init_selection = '<c-space>',
