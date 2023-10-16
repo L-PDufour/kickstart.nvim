@@ -166,7 +166,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -239,7 +239,7 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
-
+vim.o.relativenumber = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
@@ -249,6 +249,7 @@ vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.o.breakindent = true
 
 -- Save undo history
@@ -262,7 +263,7 @@ vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
